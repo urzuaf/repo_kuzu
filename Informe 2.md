@@ -221,10 +221,14 @@ for row in result:
     print(row)
 ```
 #### Ejemplo en CLI
+
+Ingresar al ejecutable
+
 ```bash
 ./kuzu [nombre_bd]
 ```
 Una vez dentro, se pueden ejecutar consultas en Cypher como:
+
 ```bash
 MATCH (n) RETURN n;
 ```
@@ -284,7 +288,7 @@ ejemplo:
 ```
 m1003606	hasCreator.hasInterest
 m1003606	hasCreator.isLocatedIn
-f40	containerOf.hasCreator
+f40		containerOf.hasCreator
 ```
 ```cypher
 match p = (n : node {id: 'm1003606'})-[:hasCreator]->()-[:hasInterest] -> () return p limit 100;

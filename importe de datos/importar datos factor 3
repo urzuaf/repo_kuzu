@@ -1,0 +1,48 @@
+create Node table node(
+	id string primary key,
+	label string
+);
+
+create rel table isLocatedIn(FROM node TO node);
+create rel table hasTag(FROM node TO node);
+create rel table hasCreator(FROM node TO node);
+create rel table replyOf(FROM node TO node);
+create rel table likes(FROM node TO node);
+
+create rel table isPartOf(FROM node TO node);
+create rel table hasType(FROM node TO node);
+create rel table isSubclassOf(FROM node TO node);
+
+create rel table containerOf(FROM node TO node);
+create rel table hasMember(FROM node TO node);
+create rel table hasModerator(FROM node TO node);
+
+create rel table hasInterest(FROM node TO node);
+create rel table knows(FROM node TO node);
+create rel table studyAt(FROM node TO node);
+create rel table workAt(FROM node TO node);
+
+
+copy node from '/home/kuzu/sf3/Nodes.csv';
+
+copy isLocatedIn from '/home/kuzu/sf3/isLocatedIn.csv' (header=true);
+copy isPartOf from '/home/kuzu/sf3/isPartOf.csv' (header=true);
+copy hasType from '/home/kuzu/sf3/hasType.csv' (header=true);
+copy isSubclassOf from '/home/kuzu/sf3/isSubclassOf.csv' (header=true);
+
+copy hasCreator from '/home/kuzu/sf3/hasCreator.csv' (header=true);
+copy hasTag from '/home/kuzu/sf3/hasTag.csv' (header=true);
+copy replyOf from '/home/kuzu/sf3/replyOf.csv' (header=true); 
+
+copy containerOf from '/home/kuzu/sf3/containerOf.csv' (header=true); 
+copy hasMember from '/home/kuzu/sf3/hasMember.csv' (header=true);
+copy hasModerator from '/home/kuzu/sf3/hasModerator.csv' (header=true); 
+
+copy hasInterest from '/home/kuzu/sf3/hasInterest.csv' (header=true);
+copy knows from '/home/kuzu/sf3/knows.csv' (header=true);
+copy likes from '/home/kuzu/sf3/likes.csv' (header=true);
+copy studyAt from '/home/kuzu/sf3/studyAt.csv' (header=true);
+copy workAt from '/home/kuzu/sf3/workAt.csv' (header=true);
+
+
+
